@@ -2,6 +2,8 @@
 
 # Template Matching with Deformable Diversity Similarity
 
+C++/Ubuntu22.04
+
 Paper https://openaccess.thecvf.com/content_cvpr_2017/papers/Talmi_Template_Matching_With_CVPR_2017_paper.pdf
 
 @inproceedings{talmi2017template,
