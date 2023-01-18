@@ -35,15 +35,15 @@ void computeDDIS(Mat *I, Mat *T, int *patchSize, int *approximated, int *fastDiv
         RGBtoHs(&TT, conversionT) ;
     }
 
-    // aproximated params for TreeCANN
-    int train_patches = 10 ;
-
     int isx, isy, tsx, tsy, size ;
     isx = I->cols ;
     isy = I->rows ;
     tsx = T->cols ;
     tsy = T->rows ;
     size = (isx - tsx + 1) * (isy - tsy + 1) ;
+
+    // aproximated params for TreeCANN
+    int train_patches = (isx * isy) / (*patchSize * *patchSize) * 0.1 ; // 0 < x <= 1
 
     // first step - NN fiels
     vector<vector<int>> nnfApprox(train_patches, vector<int>(size, 0)) ; // zeros(size(I,1),size(I,2));
